@@ -19,7 +19,10 @@ class ViewController: UIViewController {
         }
         
         Zilean.timeLog(f: functionWithReturn(), times : 1000)
-        Zilean.timeLog(f :linearSearch(key: 50), f2: binarySearch(key: 50, imin: 0, imax: 99), times: 50)
+        Zilean.timeLog(f : linearSearch(key: 50), f2: binarySearch(key: 50, imin: 0, imax: 99) , times: 50)
+        
+        print(Zilean.times(f : linearSearch(key: 50), f2: binarySearch(key: 50, imin: 0, imax: 99), times: 1000))
+        
         
     }
     
