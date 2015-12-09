@@ -15,17 +15,13 @@ class Zilean {
             * Return :
             * Seconds to execute the function n times.
             */
-            print("/=====================================/")
-            print("Started")
             let start = NSDate()
-           
-            print("Executing function \(times) times")
+        
             for _ in 0..<times {
                 f()
             }
             
             let end = NSDate()
-            print("Finished")
             
             return end.timeIntervalSinceDate(start)
     }
@@ -80,14 +76,14 @@ class Zilean {
     class func timeLog <T> (
         @autoclosure f:() -> T,
         @autoclosure f2:() -> T)  {
-            print("Seconds: \(time(f, f2: f2, times: 1))")
+            print(time(f, f2: f2, times: 1))
     }
     
     class func timeLog <T> (
         @autoclosure f:() -> T,
         @autoclosure f2:() -> T,
         times : Int)  {
-            print("Seconds: \(time(f, f2: f2, times: times))")
+            print(time(f, f2: f2, times: times))
     }
     
     

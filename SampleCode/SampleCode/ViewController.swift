@@ -19,7 +19,8 @@ class ViewController: UIViewController {
             list.append(i)
         }
         
-        Zilean.timeLog(functionWithReturn(), times : 100)
+        Zilean.timeLog(functionWithReturn(), times : 1000)
+        Zilean.timeLog(linearSearch(key: 50), f2: binarySearch(key: 50, imin: 0, imax: 99), times: 50)
         
     }
     
@@ -60,7 +61,7 @@ class ViewController: UIViewController {
     }
     
     func functionWithReturn() -> Int {
-        return 5
+        return 2+2
     }
 
 
