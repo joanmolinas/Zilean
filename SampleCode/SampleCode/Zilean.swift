@@ -8,8 +8,8 @@ import Foundation
 class Zilean {
     
     //MARK: Functions with Return
-    class func time <A> (
-        @autoclosure f: () -> A,
+    class func time <T> (
+        @autoclosure f: () -> T,
         times : Int) -> Double {
             /*
             * Return :
@@ -30,9 +30,9 @@ class Zilean {
             return end.timeIntervalSinceDate(start)
     }
     
-    class func time <A> (
-        @autoclosure f:() -> A,
-        @autoclosure f2:() -> A,
+    class func time <T> (
+        @autoclosure f:() -> T,
+        @autoclosure f2:() -> T,
         times : Int) -> Double {
             /*
             * Return :
@@ -41,7 +41,7 @@ class Zilean {
             * -1 if function1 time was faster than function2 time
             */
             
-            let fTime = time(f, times : times)
+            let fTime = time(f, times: times)
             let f2Time = time(f2, times : times)
             
             if fTime == f2Time { return 0 }
@@ -49,39 +49,43 @@ class Zilean {
             else { return 1 }
     }
     
-    class func time <A> (
-        @autoclosure f:() -> A) -> Double {
+    class func time <T> (
+        @autoclosure f:() -> T) -> Double {
         
             return time(f, times: 1)
     }
     
-    class func time <A> (
-        @autoclosure f:() -> A,
-        @autoclosure f2:() -> A) -> Double {
+    class func time <T> (
+        @autoclosure f:() -> T,
+        @autoclosure f2:() -> T) -> Double {
             return time(f, f2: f2, times: 1)
     }
     
+    
+    //MARK: Functions with 2 return values
+    
+    
     //MARK: Functions with Log
-    class func timeLog <A> (
-        @autoclosure f:() -> A) {
+    class func timeLog <T> (
+        @autoclosure f:() -> T) {
             print("Seconds: \(time(f, times: 1))")
     }
     
-    class func timeLog <A> (
-        @autoclosure f:() -> A,
+    class func timeLog <T> (
+        @autoclosure f:() -> T,
         times : Int) {
             print("Seconds: \(time(f, times: times))")
     }
     
-    class func timeLog <A> (
-        @autoclosure f:() -> A,
-        @autoclosure f2:() -> A)  {
-           print("Seconds: \(time(f, f2: f2, times: 1))")
+    class func timeLog <T> (
+        @autoclosure f:() -> T,
+        @autoclosure f2:() -> T)  {
+            print("Seconds: \(time(f, f2: f2, times: 1))")
     }
     
-    class func timeLog <A> (
-        @autoclosure f:() -> A,
-        @autoclosure f2:() -> A,
+    class func timeLog <T> (
+        @autoclosure f:() -> T,
+        @autoclosure f2:() -> T,
         times : Int)  {
             print("Seconds: \(time(f, f2: f2, times: times))")
     }
