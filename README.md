@@ -8,10 +8,6 @@ Also, you can compare 2 functions... Zilean provides several functions for compa
 
 ## Installation
 
-TODO: Describe the installation process
-
-## Usage
-
 ### Manual
 Drag and copy Zilean Folder into your project.
 
@@ -20,6 +16,8 @@ Drag and copy Zilean Folder into your project.
 
 ###Cocoapods
 `Not available yet`
+
+## Usage
 
 ## Contributing
 
