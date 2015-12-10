@@ -33,6 +33,9 @@ class ViewController: UIViewController {
         //Print a log
         Zilean.timesLog(f: linearSearch(key: 50), f2: binarySearch(key: 50, imin: 0, imax: 99), times : 100)
         
+        //With Return
+        Zilean.time(f: functionWithReturn(), times: 100)
+        
         
         
     }
