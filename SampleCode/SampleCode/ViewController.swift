@@ -18,10 +18,21 @@ class ViewController: UIViewController {
             list.append(i)
         }
         
-        Zilean.timeLog(f: functionWithReturn(), times : 1000)
-        Zilean.timeLog(f : linearSearch(key: 50), f2: binarySearch(key: 50, imin: 0, imax: 99) , times: 50)
+        //Time for one function, the time is in seconds.
+        print(Zilean.time(f: linearSearch(key: 50)))
+        print(Zilean.time(f: linearSearch(key: 50), times: 1000))
         
-        print(Zilean.times(f : linearSearch(key: 50), f2: binarySearch(key: 50, imin: 0, imax: 99), times: 1000))
+        //Compare 2 functions
+        print(Zilean.time(f: linearSearch(key: 50), f2: binarySearch(key: 50, imin: 0, imax: 99)))
+        print(Zilean.time(f: linearSearch(key: 50), f2: binarySearch(key: 50, imin: 0, imax: 99), times: 100))
+        
+        //Get both times
+        print(Zilean.times(f: linearSearch(key: 50), f2: binarySearch(key: 50, imin: 0, imax: 99)))
+        print(Zilean.times(f: linearSearch(key: 50), f2: binarySearch(key: 50, imin: 0, imax: 99), times : 100))
+        
+        //Print a log
+        Zilean.timesLog(f: linearSearch(key: 50), f2: binarySearch(key: 50, imin: 0, imax: 99), times : 100)
+        
         
         
     }
@@ -29,15 +40,11 @@ class ViewController: UIViewController {
     //MARK: Zilean samples
     //Linear Search
     func linearSearch(key key : Int) {
-        var loops = 0
         for number in list {
             if number == key {
                 break
             }
-            
-            loops++;
         }
-        
     }
     
     //Binary Search
