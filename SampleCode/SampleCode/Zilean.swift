@@ -94,7 +94,6 @@ extension Zilean {
 extension Zilean {
     
     //MARK: Functions return 2 value times
-    //TO-DO: I don't like this name, change it in a future.
     class func times <T> (
         @autoclosure f f: () -> T,
         @autoclosure f2 : () -> T,
@@ -115,5 +114,36 @@ extension Zilean {
             return (fTime, f2Time)
             
     }
-    
 }
+
+/* EXPERIMENTALLY */
+
+extension Zilean {
+    
+    class func randomInt(range : ClosedInterval<Int>) -> Int {
+       return range.start + Int(arc4random_uniform(UInt32(range.end - range.start + 1)))
+    }
+    class func randomFloat(range: ClosedInterval<Float>) -> Float {
+        return range.start + (range.end - range.start) * Float(Float(arc4random()) / Float(UInt32.max))
+    }
+    
+    class func randomDouble(range: ClosedInterval<Double>) -> Double {
+        return range.start + (range.end - range.start) * Double(Double(arc4random()) / Double(UInt32.max))
+    }
+    
+    class func randomString(length : Int) -> String {
+        let characters : NSString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        let mutableString = NSMutableString(capacity: length)
+        for var i = 0; i < length; i++ {
+            mutableString.appendFormat("%C", characters.characterAtIndex(Int(arc4random_uniform(UInt32(characters.length)))))
+        }
+        return mutableString as String
+    }
+}
+
+extension Zilean {
+    func timesWithRandomValues <T> (f : () -> T) {
+        
+    }
+}
+
