@@ -4,6 +4,8 @@
 Zilean is a simple class to calculate the time to execute one function.
 It's easy, you pass your function to Zilean and he will calculate the time to execute 1 or n times. 
 Also, you can compare 2 functions... Zilean provides several functions for compare or get this times. 
+
+You can use Zilean in your playgrounds. Only need drag Source folder to playground folder.
  
 
 ## Installation
@@ -11,11 +13,6 @@ Also, you can compare 2 functions... Zilean provides several functions for compa
 ### Manual
 Drag and copy Zilean Folder into your project.
 
-###Carthage
-`Not available yet`
-
-###Cocoapods
-`Not available yet`
 
 ## More easy, impossible
 Imagine you have 2 functions for do the same task...
