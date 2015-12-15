@@ -5,7 +5,7 @@
 
 import Foundation
 
-class Zilean {
+public class Zilean {
     
     //MARK: Main functions
     class func time <T> (
@@ -46,7 +46,7 @@ class Zilean {
     }
 }
 
-extension Zilean {
+public extension Zilean {
     
     //MARK: Most simple functions
     class func time <T> (
@@ -63,7 +63,7 @@ extension Zilean {
     
 }
 
-extension Zilean {
+public extension Zilean {
     
     //MARK: Functions with Log
     class func timeLog <T> (
@@ -107,7 +107,7 @@ extension Zilean {
     }
 }
 
-extension Zilean {
+public extension Zilean {
     
     //MARK: Functions return 2 value times
     class func times <T> (
